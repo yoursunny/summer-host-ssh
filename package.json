@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "nodemon -w src ./src/main.js",
     "lint": "xo --fix",
-    "postinstall": "node postinstall.js"
+    "postinstall": "bash postinstall.sh"
   },
   "dependencies": {
     "date-fns": "^2.24.0",
