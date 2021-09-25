@@ -2,8 +2,10 @@ import Debug from "debug";
 
 import { HELP, YABS } from "./content.js";
 
+/** IPv9 host. */
 export class Host {
   /**
+   * Constructor.
    * @param {string} name
    */
   constructor(name) {
@@ -14,9 +16,10 @@ export class Host {
   }
 
   /**
+   * Handle a command.
    * @param {import("./conn.js").Client} client
-   * @param {string[]} argv
-   * @returns {string}
+   * @param {string[]} argv command and arguments.
+   * @returns {string} response text.
    */
   handleCommand(client, argv) {
     this.debug("command %s", argv);
@@ -54,11 +57,15 @@ export class Host {
   }
 }
 
-/** @type {Map<string, Host>} */
+/**
+ * Active Host instances.
+ * @type {Map<string, Host>}
+ */
 const hosts = new Map();
 
 /**
- * @param {string} name
+ * Find or create Host instance by IPv9 address.
+ * @param {string} name IPv9 address.
  */
 export function lookup(name) {
   let host = hosts.get(name);

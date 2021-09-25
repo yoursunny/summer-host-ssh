@@ -1,10 +1,10 @@
 import dateFns from "date-fns-tz";
+
 const { utcToZonedTime, format } = dateFns;
 
-export function WELCOME(name, password) {
+export function WELCOME(name) {
   return `
 Connected to IPv9 server ${name}.
-Please post your password '${password}' on Twitter so you don't forget.
 Type 'help' to see available commands.
 `;
 }
